@@ -1,4 +1,4 @@
-// Open Pixel v1.2.0 | Published By Dockwa | Created By Stuart Yamartino | MIT License
+// Open Pixel v1.2.0 | Published By Grofers | MIT License
 ;(function(window, document, pixelFunc, pixelFuncName, pixelEndpoint, versionNumber) {
 "use strict";
 
@@ -439,16 +439,16 @@ window.onload = function () {
     }.bind(aTags[i]));
   }
 
-  var dataAttributes = document.querySelectorAll('[data-opix-event]');
+  var dataAttributes = document.querySelectorAll('[data-gtrack-event]');
 
   for (var i = 0, l = dataAttributes.length; i < l; i++) {
     dataAttributes[i].addEventListener('click', function (_e) {
-      var event = this.getAttribute('data-opix-event');
+      var event = this.getAttribute('data-gtrack-event');
 
       if (event) {
-        new Pixel(event, Helper.now(), this.getAttribute('data-opix-data'));
+        new Pixel(event, Helper.now(), this.getAttribute('data-gtrack-data'));
       }
     }.bind(dataAttributes[i]));
   }
 };
-}(window, document, window["opix"], "opix", "/pixel.gif", 1));
+}(window, document, window["gtrack"], "gtrack", "https://gtrack.grofers.com/pixel.gif", 1));
